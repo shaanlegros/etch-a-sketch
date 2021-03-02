@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*position: absolute;
+    top: 15%;
+    left: 30%;*/
+    padding-top: 5em;
+}

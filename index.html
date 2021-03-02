@@ -5,12 +5,12 @@
     <link rel="stylesheet" type="text/css" href="etch-a-sketch.css">
 </head>
 <body>
-
+    <div class="container"></div>
 <script>
-    const body = document.querySelector("body");
+    const body = document.querySelector("div");
 
     const section = document.createElement("section");
-    section.classList.add("container");
+    //section.classList.add("container");
     body.appendChild(section);
 
 
@@ -30,11 +30,11 @@
 
         div.style.width = "25px";
         div.style.height = "25px";
-        div.style.border = "solid black";
+        div.style.border = "1px solid black";
         
     }
 
-    const container = document.querySelector("#container");
+    //const container = document.querySelector("#container");
     section.style.display = "grid";
     section.style.gridTemplateColumns = "repeat(16, 1fr)";
     section.style.gridTemplateRows = "repeat(16, 1fr)";
