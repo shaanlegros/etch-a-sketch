@@ -13,14 +13,31 @@
     section.classList.add("container");
     body.appendChild(section);
 
-    for (let i =1; i <=16; i++) {
-        const div = document.createElement("div");
-        section.appendChild(div);
-        div.classList.add(String(i));
+
+    /*let div = document.createElement("div");
+    section.appendChild(div);
+    div.classList.add("square");
+
+    //let square = document.querySelector(".square");
+    div.style.width = "25px";
+    div.style.height = "25px";
+    //div.style.border = "solid black";*/
+
+    for (let i = 0; i < 16*16; i++) {
+        let div = document.createElement("div");
+        section.append(div);
+        div.classList.add("square");
+
+        div.style.width = "25px";
+        div.style.height = "25px";
+        div.style.border = "solid black";
+        
     }
 
-
+    const container = document.querySelector("#container");
     section.style.display = "grid";
+    section.style.gridTemplateColumns = "repeat(16, 1fr)";
+    section.style.gridTemplateRows = "repeat(16, 1fr)";
 
 </script>    
 </body>
