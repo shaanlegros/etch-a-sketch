@@ -27,9 +27,9 @@
     div.style.height = "25px";
     //div.style.border = "solid black";*/
 
-    let squares = [];
+    let length = 16;
 
-    for (let i = 0; i < 16*16; i++) {
+    for (let i = 0; i < length**2; i++) {
         let div = document.createElement("div");
         section.append(div);
         div.classList.add("square");
@@ -48,7 +48,6 @@
             div.style.backgroundColor = "black";
             //div.classList.add("change");
         }
-        squares.push(div);
     }
 
     //const container = document.querySelector("#container");
@@ -72,11 +71,30 @@
     });*/
     
     function reset() {
-        let length = prompt("Squares per side?");
-        console.log(length);
+        let length = prompt("Squares per side? Must be less than 64");
+        
+        section.remove();
+        const newSection = document.createElement("section");
+        box.appendChild(newSection);
 
-        let square = document.querySelectorAll("div");
-        square.style.backgroundColor = "white";
+        for (let i = 0; i < length**2; i++) {
+            let div = document.createElement("div");
+            newSection.append(div);
+
+            div.style.width = `${400/length}px`;
+            div.style.height = `${400/length}px`;
+            div.style.border = "1px solid black";
+            div.style.backgroundColor = "white";
+
+            div.addEventListener("mouseover", changeColor,false);
+
+            function changeColor() {
+                div.style.backgroundColor = "black";
+            }
+        }
+        newSection.style.display = "grid";
+        newSection.style.gridTemplateColumns = `repeat(${length}, 1fr)`;
+        newSection.style.gridTemplateRows = `repeat(${length}, 1fr)`;
     }
     
 </script>    
