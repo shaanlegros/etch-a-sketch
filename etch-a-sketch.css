@@ -5,5 +5,28 @@
     /*position: absolute;
     top: 15%;
     left: 30%;*/
-    padding-top: 5em;
+    padding-top: 1em;
+}
+
+#center {
+    text-align: center;
+}
+
+section {
+    border: solid thick;
+}
+
+body {
+    background-color: rgb(197, 197, 197);
+}
+
+.change {
+    background-color: black;
+}
+
+button {
+    margin: 0 auto;
+    display: flex;
+    /*justify-content: center;
+    align-items:center;*/
 }

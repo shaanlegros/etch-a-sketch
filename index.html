@@ -5,14 +5,18 @@
     <link rel="stylesheet" type="text/css" href="etch-a-sketch.css">
 </head>
 <body>
+    <h1 id="center">Etch-a-Sketch!</h1>
+    <button onclick="reset()">Reset</button>
     <div class="container"></div>
 <script>
-    const body = document.querySelector("div");
+    //comments are what I tried and didn't work
+
+    const body = document.querySelector("body");
+    const box = document.querySelector("div");
 
     const section = document.createElement("section");
     //section.classList.add("container");
-    body.appendChild(section);
-
+    box.appendChild(section);
 
     /*let div = document.createElement("div");
     section.appendChild(div);
@@ -23,6 +27,8 @@
     div.style.height = "25px";
     //div.style.border = "solid black";*/
 
+    let squares = [];
+
     for (let i = 0; i < 16*16; i++) {
         let div = document.createElement("div");
         section.append(div);
@@ -31,7 +37,18 @@
         div.style.width = "25px";
         div.style.height = "25px";
         div.style.border = "1px solid black";
-        
+        div.style.backgroundColor = "white";
+
+        //let divHover = document.querySelector("div");
+        //divHover.addEventListener("mouseover", changeColor,false);
+        div.addEventListener("mouseover", changeColor,false);
+
+        function changeColor() {
+            //divHover.setAttribute("style", "background-color: black;");
+            div.style.backgroundColor = "black";
+            //div.classList.add("change");
+        }
+        squares.push(div);
     }
 
     //const container = document.querySelector("#container");
@@ -39,6 +56,29 @@
     section.style.gridTemplateColumns = "repeat(16, 1fr)";
     section.style.gridTemplateRows = "repeat(16, 1fr)";
 
+    /*const head = document.querySelector("head");
+    const h1 = document.createElement("h1");
+    h1.textContent = "Etch-a-Sketch!";
+    //head.appendChild(h1);
+    body.appendChild(h1);*/
+
+    /*const btn = document.querySelector("button");
+    btn.addEventListener("click", function (e) {
+        let squares = document.querySelectorAll(".square");
+        squares.forEach(item => backgroundColor = "white");
+
+        let length = prompt("Squares per side?");
+        console.log(length);
+    });*/
+    
+    function reset() {
+        let length = prompt("Squares per side?");
+        console.log(length);
+
+        let square = document.querySelectorAll("div");
+        square.style.backgroundColor = "white";
+    }
+    
 </script>    
 </body>
 </html>
